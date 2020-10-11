@@ -4,7 +4,10 @@ class PostCreate extends React.Component{
     render(){
         return (
           <div className="PostCreate">
-            PostCreate
+            <form>
+                <textarea type="textarea" placeholder="Content"/><br/>
+                <input type="submit"/>
+            </form>
           </div>
         );
       }
