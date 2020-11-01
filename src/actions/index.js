@@ -6,6 +6,7 @@ export const createPost=(data)=>{
               "Content-Type": "application/json",
             },
             body: JSON.stringify(data),
-          })
+          }).then(res=>res.json())
+          .then(post=>dispatch({ type: 'ADD-POST', post }))
     }
 }

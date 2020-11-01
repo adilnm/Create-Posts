@@ -6,7 +6,8 @@ class PostCreate extends React.Component {
   constructor(props) {
     super();
     this.state = {
-      content: "",
+      title:"",
+      body: ""
     };
   }
 
@@ -18,18 +19,19 @@ class PostCreate extends React.Component {
 
   handleSubmit = (e) => {
     e.preventDefault();
-    this.props.createPost({some:"adil"})
+    this.props.createPost(this.state);
   };
 
   render() {
     return (
       <div className="PostCreate">
         <form onSubmit={this.handleSubmit}>
+          <input onChange={this.handleChange} type="text" name="title" placeholder="Title" /><br/>
           <textarea
             onChange={this.handleChange}
             type="textarea"
             placeholder="Content"
-            name="content"
+            name="body"
           />
           <br />
           <input type="submit" />
@@ -39,4 +41,4 @@ class PostCreate extends React.Component {
   }
 }
 
-export default connect (null,{createPost})(PostCreate);
+export default connect(null, { createPost })(PostCreate);
