@@ -1,4 +1,6 @@
 import React from "react";
+import { connect } from "react-redux";
+import { createPost } from "../actions";
 
 class PostCreate extends React.Component {
   constructor(props) {
@@ -16,14 +18,7 @@ class PostCreate extends React.Component {
 
   handleSubmit = (e) => {
     e.preventDefault();
-    fetch("http://localhost:3000/posts", {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-        Accept: "application/json",
-      },
-      body: this.state
-    });
+    this.props.createPost({some:"adil"})
   };
 
   render() {
@@ -44,4 +39,4 @@ class PostCreate extends React.Component {
   }
 }
 
-export default PostCreate;
+export default connect (null,{createPost})(PostCreate);
