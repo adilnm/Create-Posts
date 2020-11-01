@@ -5,7 +5,7 @@ export const createPost=(data)=>{
             headers: {
               "Content-Type": "application/json",
             },
-            body: JSON.stringify(this.state),
+            body: JSON.stringify(data),
           })
     }
 }
