@@ -10,3 +10,10 @@ export const createPost=(data)=>{
           .then(post=>dispatch({ type: 'ADD-POST', payload:post }))
     }
 }
+
+export const Posts=()=>{
+    return dispatch=>{
+        fetch("http://localhost:3001/posts")
+
+    }
+}
