@@ -14,6 +14,9 @@ export const createPost=(data)=>{
 export const Posts=()=>{
     return dispatch=>{
         fetch("http://localhost:3001/posts")
-
+            .then(res=>res.json())
+            .then(posts=>{
+                dispatch({ type: 'ALL-POSTS', payload:posts })
+            })
     }
 }
