@@ -4,6 +4,7 @@ import { BrowserRouter, Route } from "react-router-dom";
 import AllPosts from "./components/AllPosts";
 import { connect } from "react-redux";
 import { Posts } from "./actions";
+import Post from "./components/Post";
 
 class App extends React.Component {
 
@@ -16,10 +17,16 @@ class App extends React.Component {
         <div className="App">
           <Route exact path="/new" component={PostCreate} />
           <Route exact path="/" component={AllPosts} />
+          <Route exact path="/posts/:postId" render={props => <Post posts={this.props.posts}/>} />
         </div>
       </BrowserRouter>
     );
   }
 }
 
-export default connect(null, {Posts})(App);
+const mstp = (state) => {
+  return {
+    posts:state.allPosts
+  }
+}
+export default connect(mstp, {Posts})(App);
