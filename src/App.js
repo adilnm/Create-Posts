@@ -15,7 +15,7 @@ class App extends React.Component {
       <BrowserRouter>
         <div className="App">
           <Route exact path="/new" component={PostCreate} />
-          {/* <Route exact path="/" component={AllPosts} /> */}
+          <Route exact path="/" component={AllPosts} />
         </div>
       </BrowserRouter>
     );
