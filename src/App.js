@@ -17,7 +17,7 @@ class App extends React.Component {
         <div className="App">
           <Route exact path="/new" component={PostCreate} />
           <Route exact path="/" component={AllPosts} />
-          <Route exact path="/posts/:postId" render={props => <Post posts={this.props.posts}/>} />
+          <Route exact path="/posts/:postId" render={props => <Post {...props} posts={this.props.posts}/>} />
         </div>
       </BrowserRouter>
     );
