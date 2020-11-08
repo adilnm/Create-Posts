@@ -11,9 +11,9 @@ class AllPosts extends React.Component {
             return(
                 <div>
                     <h1>Posts</h1>
-                    {this.props.posts.map(i=>{
+                    {this.props.posts.map(post=>{
                         return(
-                        <li key={i.id}>{i.title}</li>
+                        <Link key={post.id} to={`/posts/${post.id}`}><li>{post.title}</li></Link>
                         )
                     })}
                 </div>
