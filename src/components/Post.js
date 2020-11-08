@@ -2,6 +2,9 @@ import React, { Component } from 'react'
 
 export default class Post extends Component {
     
+    handleDelete(e){
+        
+    }
     render() {
         const {posts}=this.props
         const{postId}=this.props.match.params
@@ -11,6 +14,7 @@ export default class Post extends Component {
                 <div>
                     <h1>{post[0].title}</h1>
                     <div>{post[0].body}</div>
+                    <button onClick={this.handleDelete}>Delete</button>
                 </div>
             )
         }else{

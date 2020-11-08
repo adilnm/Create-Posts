@@ -20,3 +20,13 @@ export const Posts=()=>{
             })
     }
 }
+
+export const deletePost=(id)=>{
+    return dispatch=>{
+        fetch(`http://localhost:3001/posts/${id}`, {
+            method: 'DELETE'            
+        })
+            .then(res=>res.json())
+           
+    }
+}

@@ -3,9 +3,8 @@ import { connect } from "react-redux";
 import { Link } from "react-router-dom";
 
 class AllPosts extends React.Component {
-    componentDidMount(){
-        
-    }
+
+
     render(){
         if (this.props.posts.length>0) {
             return(
