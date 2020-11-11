@@ -1,3 +1,4 @@
+import { browserHistory } from 'react-router'
 export const createPost=(data)=>{
     return dispatch=>{
         fetch("http://localhost:3001/posts", {
@@ -27,6 +28,10 @@ export const deletePost=(id)=>{
             method: 'DELETE'            
         })
             .then(res=>res.json())
+            .then(postId=>{
+                dispatch({ type: 'DELETE-POST', payload:postId })
+                
+            })
            
     }
 }
